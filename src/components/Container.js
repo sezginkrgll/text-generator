@@ -28,7 +28,7 @@ function Container() {
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchText({ paragraphs, format: textFormat }));
+      dispatch(fetchText({ paragraphs: 4, format: "text" }));
     }
   }, [dispatch, status]);
 

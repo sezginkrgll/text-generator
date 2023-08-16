@@ -4,13 +4,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchText = createAsyncThunk(
-  "characters/getCharacters",
+  "paragraphs/getParagraphs",
   async (text) => {
     const res = await axios(
       `https://baconipsum.com/api/?type=all-meat&start-with-lorem=1&paras=${text.paragraphs}&format=${text.format}`
     );
-    console.log(text.paragraphs);
-    console.log(text.format);
     return res.data;
   }
 );
